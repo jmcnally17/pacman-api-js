@@ -6,7 +6,7 @@ The client application that pairs with this API can be found at [https://github.
 
 For a full comprehensive commit history, see the old project repo found at [https://github.com/jmcnally17/pacman(old)](<https://github.com/jmcnally17/pacman(old)>).
 
-[<img src="./images/pacman-play-button.png">](https://pacman-7e4e.onrender.com)
+[<img src="./images/pacman-play-button.png">](https://pacman-btbi.onrender.com)
 
 ### Technologies Used
 
