@@ -14,7 +14,6 @@ const SessionsController = {
         bcrypt.compare(req.body.password, user.password, (err, result) => {
           if (result) {
             req.session.user = user;
-            console.log(req.session);
             res.status(200).send();
           } else {
             res.statusMessage = "Invalid credentials";
