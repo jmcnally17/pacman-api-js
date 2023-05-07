@@ -23,24 +23,23 @@ const UsersController = {
       res.statusMessage = "Password must be at least 8 characters long";
       res.status(409).send();
     } else {
-      bcrypt.hash(password, 10, (err, hash) => {
+      bcrypt.hash(password, 10, async (err, hash) => {
         const user = new User({
           username: username,
           password: hash,
         });
-        user.save((err) => {
-          if (err) {
-            if (err.code === 11000) {
-              res.statusMessage = "Username already taken";
-              res.status(409).send();
-            } else {
-              res.statusMessage = "Oops, something went wrong!";
-              res.status(400).send();
-            }
+        try {
+          await user.save();
+          res.status(200).send();
+        } catch (err) {
+          if (err.code === 11000) {
+            res.statusMessage = "Username already taken";
+            res.status(409).send();
           } else {
-            res.status(200).send();
+            res.statusMessage = "Oops, something went wrong!";
+            res.status(400).send();
           }
-        });
+        }
       });
     }
   },
