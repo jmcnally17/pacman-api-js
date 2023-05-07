@@ -3,7 +3,6 @@ const bcrypt = require("bcrypt");
 
 const SessionsController = {
   Index: (req, res) => {
-    console.log(req.session);
     res.send({ user: req.session.user });
   },
   Create: (req, res) => {
@@ -15,7 +14,7 @@ const SessionsController = {
         bcrypt.compare(req.body.password, user.password, (err, result) => {
           if (result) {
             req.session.user = user;
-            console.log(req.session.user);
+            console.log(req.session);
             res.status(200).send();
           } else {
             res.statusMessage = "Invalid credentials";
