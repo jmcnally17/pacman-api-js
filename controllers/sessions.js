@@ -9,15 +9,14 @@ const SessionsController = {
   Create: (req, res) => {
     User.findOne({ username: req.body.username }).then((user) => {
       if (!user) {
-        res.status(409).send({ message: "Invalid credentials" });
+        res.status(401).send({ message: "Invalid credentials" });
       } else {
         bcrypt.compare(req.body.password, user.password, (err, result) => {
           if (result) {
             const token = Authenticator.generateAccessToken(user.username);
-            res.json(token);
-            res.status(200).send();
+            res.status(200).json(token).send();
           } else {
-            res.status(409).send({ message: "Invalid credentials" });
+            res.status(401).send({ message: "Invalid credentials" });
           }
         });
       }
