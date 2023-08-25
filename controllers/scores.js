@@ -1,4 +1,5 @@
 const redisClient = require("../redis");
+const Authenticator = require("../authenticator");
 
 const ScoresController = {
   Index: async (req, res) => {
@@ -14,6 +15,14 @@ const ScoresController = {
     }
   },
   Create: async (req, res) => {
+    if (req.user.username !== req.body.name) {
+      res
+        .status(403)
+        .send({
+          message:
+            "User logged in does not match username sent to update score",
+        });
+    }
     try {
       const currentScore = await redisClient.zScore("scores", req.body.name);
       if (req.body.points > currentScore || currentScore === null) {
