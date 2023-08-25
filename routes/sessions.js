@@ -2,9 +2,9 @@ const express = require("express");
 const router = express.Router();
 
 const SessionsController = require("../controllers/sessions");
+const Authenticator = require("../authenticator");
 
-router.get("/", SessionsController.Index);
+router.get("/", Authenticator.authenticateToken, SessionsController.Index);
 router.post("/", SessionsController.Create);
-router.delete("/", SessionsController.Destroy);
 
 module.exports = router;
