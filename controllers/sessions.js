@@ -1,9 +1,10 @@
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
+const Authenticator = require("../authenticator");
 
 const SessionsController = {
   Index: (req, res) => {
-    res.send({ user: req.session.user });
+    res.send({ user: req.user });
   },
   Create: (req, res) => {
     User.findOne({ username: req.body.username }).then((user) => {
@@ -13,7 +14,8 @@ const SessionsController = {
       } else {
         bcrypt.compare(req.body.password, user.password, (err, result) => {
           if (result) {
-            req.session.user = user;
+            const token = Authenticator.generateAccessToken(user.username);
+            res.json(token);
             res.status(200).send();
           } else {
             res.statusMessage = "Invalid credentials";
@@ -22,9 +24,6 @@ const SessionsController = {
         });
       }
     });
-  },
-  Destroy: (req, res) => {
-    req.session.destroy();
   },
 };
 

@@ -1,12 +1,8 @@
 const createError = require("http-errors");
 const express = require("express");
-const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const cors = require("cors");
-const session = require("express-session");
-const RedisStore = require("connect-redis").default;
-const redisClient = require("./redis");
 
 const usersRouter = require("./routes/users");
 const sessionsRouter = require("./routes/sessions");
@@ -25,22 +21,6 @@ app.use(
   cors({
     origin: url,
     credentials: true,
-  })
-);
-
-app.use(
-  session({
-    store: new RedisStore({
-      client: redisClient,
-      prefix: "pacman:",
-    }),
-    key: "user_sid",
-    secret: "super_secret",
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      expires: 600000,
-    },
   })
 );
 
