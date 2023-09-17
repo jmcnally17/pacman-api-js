@@ -6,8 +6,12 @@ const ScoresController = {
       const scoresData = await redisClient.zRangeWithScores("scores", 0, 9, {
         REV: true,
       });
+      const scores = [];
+      scoresData.forEach((score) => {
+        scores.push({ name: score.value, points: score.score });
+      });
       res.json({
-        scores: scoresData,
+        scores: scores,
       });
     } catch {
       res.status(500).send({ message: "scores could not be retrieved" });
