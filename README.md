@@ -12,13 +12,12 @@ The original project monolith (with a full comprehensive commit history) can be 
 
 ### Technologies Used
 
-- [Trello](https://trello.com/) for monitoring feature progress
-- [Mongoose](https://mongoosejs.com/docs/) for Object Data Modelling (ODM)
 - [Express](https://expressjs.com/) as a web framework
 - [Node.js](https://nodejs.org/en/) for the server runtime environment
-- [Render](https://render.com/) for deployment
 - [MongoDB Atlas](https://www.mongodb.com/atlas/database) and [Redis Labs](https://redis.com/) for hosting the databases
+- [Mongoose](https://mongoosejs.com/docs/) for Object Data Modelling (ODM)
 - [Jest](https://jestjs.io/) for testing
+- [Render](https://render.com/) for hosting
 - [GitHub](https://github.com/) for version control
 
 ## Running Locally
