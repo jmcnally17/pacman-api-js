@@ -2,7 +2,7 @@ const User = require("../models/user");
 const bcrypt = require("bcrypt");
 const Authenticator = require("../authenticator");
 
-const SessionsController = {
+const AuthController = {
   Index: (req, res) => {
     res.send({ user: req.user });
   },
@@ -24,4 +24,4 @@ const SessionsController = {
   },
 };
 
-module.exports = SessionsController;
+module.exports = AuthController;
