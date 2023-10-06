@@ -11,7 +11,7 @@ class Authenticator {
   }
 
   static authenticateToken(req, res, next) {
-    const token = req.headers["authorization"];
+    const token = req.headers.authorization;
     if (!token) return res.sendStatus(401);
     jwt.verify(token, Authenticator.tokenSecret, (err, user) => {
       if (err) {
