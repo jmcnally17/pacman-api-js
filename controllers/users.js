@@ -30,7 +30,7 @@ const UsersController = {
         });
         try {
           await user.save();
-          res.status(200).send();
+          res.status(201).send({ message: "Your account has been created" });
         } catch (err) {
           if (err.code === 11000) {
             res.status(401).send({ message: "Username already taken" });

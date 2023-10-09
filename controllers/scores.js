@@ -14,7 +14,7 @@ const ScoresController = {
         scores: scores,
       });
     } catch {
-      res.status(500).send({ message: "scores could not be retrieved" });
+      res.status(500).send({ message: "Scores could not be retrieved" });
     }
   },
   Create: async (req, res) => {
@@ -33,14 +33,14 @@ const ScoresController = {
           score: req.body.points,
           value: req.body.username,
         });
-        res.status(201).send({ message: "your score has been saved" });
+        res.status(201).send({ message: "Your score has been saved" });
       } else {
         res
           .status(204)
-          .send({ message: "you have not beaten your high score" });
+          .send({ message: "You have not beaten your high score" });
       }
     } catch {
-      res.status(500).send({ message: "your score was not saved" });
+      res.status(500).send({ message: "Your score was not saved" });
     }
   },
 };
