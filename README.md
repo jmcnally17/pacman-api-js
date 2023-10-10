@@ -8,7 +8,7 @@ The Java Spring version of this API (in progress) can be found at https://github
 
 The original project monolith (with a full comprehensive commit history) can be found at https://github.com/jmcnally17/pacman-old
 
-[<img src="./images/pacman-play-button.png">](https://www.netlify.com/)
+[<img src="./images/pacman-play-button.png">](https://projectpacman.netlify.app/)
 
 ### Technologies Used
 
