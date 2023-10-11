@@ -64,7 +64,7 @@ brew services start mongodb-community@5.0
 Now, you can clone this repository:
 
 ```
-git clone https://github.com/jmcnally17/pacman-api-js
+git clone https://github.com/jmcnally17/pacman-api-js.git
 ```
 
 The dependencies must be installed by running `npm install` while in the [main](https://github.com/jmcnally17/pacman-api-js) directory.
@@ -77,13 +77,13 @@ redis-server
 
 into a separate terminal to do this.
 
-Now you can run the server by entering `npm start` while in the main directory and the API will be ready to receive requests.
+Now you can run the server by entering `npm start` while in the [main](https://github.com/jmcnally17/pacman-api-js) directory and the API will be ready to receive requests.
 
 In order to play the game, you must also be running the client application alongside this server (link to that repo found at the top of this README).
 
 ## Testing
 
-Tests can be run while in the [main](https://github.com/jmcnally17/pacman-api-js) directory by running `npm test`. Code coverage statistics can be be obtained by running `npm run test:coverage`. Tests were written first in order to adhere to the test-driven development (TDD) process by following the red-green-refactor cycle.
+Tests can be run while in the [main](https://github.com/jmcnally17/pacman-api-js) directory by running `npm test`. Code coverage statistics can be obtained by running `npm run test:coverage`. Tests were written first in order to adhere to the test-driven development (TDD) process by following the red-green-refactor cycle.
 
 ## Express Application Generator
 
