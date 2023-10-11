@@ -17,7 +17,7 @@ The original project monolith (with a full comprehensive commit history) can be 
 - [MongoDB Atlas](https://www.mongodb.com/atlas/database) and [Redis Labs](https://redis.com/) for hosting the databases
 - [Mongoose](https://mongoosejs.com/docs/) for Object Data Modelling (ODM)
 - [Jest](https://jestjs.io/) for testing
-- [Render](https://render.com/) for hosting
+- [Render](https://render.com/) for deployment
 - [GitHub](https://github.com/) for version control
 
 ## Running Locally
