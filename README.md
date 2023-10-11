@@ -2,7 +2,7 @@
 
 This repository is the Javascript backend server for my solo Pac-Man project, and is currently the deployed version. This API connects to both MongoDB and Redis databases to store and retrieve user account and score data respectively.
 
-The client application that pairs with this API can be found at https://github.com/jmcnally17/pacman-client
+The client React application that pairs with this API can be found at https://github.com/jmcnally17/pacman-client-react
 
 The Java Spring version of this API can be found at https://github.com/jmcnally17/pacman-api-java
 
