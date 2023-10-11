@@ -4,7 +4,7 @@ This repository is the Javascript backend server for my solo Pac-Man project, an
 
 The client application that pairs with this API can be found at https://github.com/jmcnally17/pacman-client
 
-The Java Spring version of this API (in progress) can be found at https://github.com/jmcnally17/pacman-api-java
+The Java Spring version of this API can be found at https://github.com/jmcnally17/pacman-api-java
 
 The original project monolith (with a full comprehensive commit history) can be found at https://github.com/jmcnally17/pacman-old
 
