@@ -1,11 +1,12 @@
 const redis = require("redis");
+const Config = require("./config");
 
-const config = process.env.REDIS_HOST
+const config = Config.get("REDIS_HOST")
   ? {
-      password: process.env.REDIS_PASSWORD,
+      password: Config.get("REDIS_PASSWORD"),
       socket: {
-        host: process.env.REDIS_HOST,
-        port: process.env.REDIS_PORT,
+        host: Config.get("REDIS_HOST"),
+        port: Config.get("REDIS_PORT,"),
       },
     }
   : null;

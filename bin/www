@@ -8,19 +8,20 @@ var app = require("../app");
 var debug = require("debug")("pacman:server");
 var http = require("http");
 var mongoose = require("mongoose");
+var Config = require("../config");
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || "8080");
+var port = normalizePort(Config.get("PORT") || "8080");
 app.set("port", port);
 
 /**
  * Connect to MongoDB.
  */
 
-var mongoDbUrl = process.env.MONGODB_URL || "mongodb://127.0.0.1/pacman";
+var mongoDbUrl = Config.get("MONGODB_URL") || "mongodb://127.0.0.1/pacman";
 async function main() {
   await mongoose.connect(mongoDbUrl);
 }

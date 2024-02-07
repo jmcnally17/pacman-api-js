@@ -10,7 +10,9 @@ const scoresRouter = require("./routes/scores");
 
 const app = express();
 
-const url = process.env.REACT_APP_URL || "http://localhost:8000";
+const Config = require("./config");
+
+const url = Config.get("REACT_APP_URL") || "http://localhost:8000";
 
 app.use(logger("dev"));
 app.use(express.json());
