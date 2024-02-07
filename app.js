@@ -24,6 +24,11 @@ app.use(
   })
 );
 
+// add home endpoint for health checks
+app.get("/", (req, res) => {
+  res.send("Pac-Man API is online");
+});
+
 app.use("/users", usersRouter);
 app.use("/auth", authRouter);
 app.use("/scores", scoresRouter);
